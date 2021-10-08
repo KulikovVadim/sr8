@@ -11,12 +11,17 @@ try:
 except ValueError:
     print("Ошибка, пожалуйста, введите целые числовые значения")
 else:
-    if sistema == 2 or sistema == 8:
+    if chislo == 0:
+        print("0 в любой системе счисления 0")
+        quit()
+    if sistema == 2 and (chislo <= 0 or chislo >= 256):
+        print("Пожалуйста, задайте число от 0 до 255")
+        quit()
+    elif sistema == 8 or sistema == 2:
         perevod_chisla(chislo, sistema)
         print(str(chislo) + ' -> ' + str(perevod_chisla(chislo, sistema)))
     else:
         print("Пожалуйста, выберите двоичную либо восьмиричную систему")
-
 
 
 
